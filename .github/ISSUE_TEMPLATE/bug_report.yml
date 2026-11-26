@@ -1,0 +1,23 @@
+name: Bug report
+description: Report a reproducible problem.
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, app version and source format. Never include API keys.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include a redacted error and a small redistributable image if useful.
+    validations:
+      required: true

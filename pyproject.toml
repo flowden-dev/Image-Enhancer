@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "image-enhancer"
+dynamic = ["version", "dependencies"]
+description = "Desktop image upscaling, format conversion and text translation for JPG/JPEG, PNG, TGA and DDS."
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+license = "MIT"
+license-files = ["LICENSE", "enhancer/models/Anime4K-LICENSE.txt"]
+authors = [{name = "flowden"}]
+classifiers = [
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Graphics :: Editors",
+]
+
+[project.gui-scripts]
+image-enhancer = "enhancer.gui:main"
+
+[tool.setuptools.packages.find]
+include = ["enhancer*"]
+
+[tool.setuptools.package-data]
+enhancer = ["models/*.npz", "models/*.txt"]
+
+[tool.setuptools.dynamic]
+version = {attr = "enhancer.__version__"}
+dependencies = {file = ["requirements.txt"]}
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]

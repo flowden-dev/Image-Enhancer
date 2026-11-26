@@ -1,0 +1,7 @@
+include app.py bootstrap.py run.cmd test.cmd run.sh Run.command
+include *.md *.toml requirements.txt .editorconfig .gitattributes .gitignore
+recursive-include tests *.py
+recursive-include scripts *.py
+recursive-include docs *.md *.png
+recursive-include .github *.yml *.md
+global-exclude __pycache__ *.py[cod]
